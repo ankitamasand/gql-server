@@ -1,0 +1,144 @@
+{
+    "restaurants": [
+        {
+            "id": "res_1",
+            "name": "Daniel",
+            "email": "daniel@xyz.com",
+            "location": "Boston",
+            "menu": [
+                {
+                    "id": "mitem_1",
+                    "name": "Veg Sandwich",
+                    "price": "$25"
+                },
+                {
+                    "id": "mitem_2",
+                    "name": "Cheese Pizza",
+                    "price": "$30"
+                }
+            ]
+        },
+        {
+            "id": "res_2",
+            "name": "Lincoln Square Steak",
+            "email": "lincoln@xyz.com",
+            "location": "California",
+            "menu": [
+                {
+                    "id": "mitem_1",
+                    "name": "Thai Basil Salad",
+                    "price": "$30"
+                },
+                {
+                    "id": "mitem_2",
+                    "name": "Grilled Spring Onions",
+                    "price": "$40"
+                },
+                {
+                    "id": "mitem_3",
+                    "name": "Dutch Choclate Cake",
+                    "price": "$150"
+                }
+            ]
+        },
+        {
+            "id": "res_3",
+            "name": "The Little Owl",
+            "email": "littleowl@xyz.com",
+            "location": "Maryland",
+            "menu": [
+                {
+                    "id": "mitem_1",
+                    "name": "Poached Eggs",
+                    "price": "$25"
+                },
+                {
+                    "id": "mitem_2",
+                    "name": "Breakfast Wrap",
+                    "price": "$20"
+                },
+                {
+                    "id": "mitem_3",
+                    "name": "Pancakes",
+                    "price": "$20"
+                }
+            ]
+        }
+    ],
+    "customers": [
+        {
+            "id": "ct_1",
+            "name": "John Doe",
+            "location": "Maryland",
+            "email": "john@xyz.com`"
+        },
+        {
+            "id": "ct_2",
+            "name": "Sarah",
+            "location": "Maryland",
+            "email": "sarah@xyz.com"
+        },
+        {
+            "id": "ct_3",
+            "name": "Niks",
+            "location": "California",
+            "email": "niks@xyz.com"
+        },
+        {
+            "id": "ct_4",
+            "name": "Gaur",
+            "location": "California",
+            "email": "gaur@xyz.com"
+        },
+        {
+            "id": "ct_5",
+            "name": "Happy",
+            "location": "California",
+            "email": "happy@xyz.com"
+        },
+        {
+            "id": "ct_6",
+            "name": "Alexander",
+            "location": "Boston",
+            "email": "alexander@xyz.com`"
+        }
+    ],
+    "orders": [
+        {
+            "id": "order_1",
+            "customerId": "ct_6",
+            "restaurantId": "res_1",
+            "order": ["mitem_1"]
+        },
+        {
+            "id": "order_2",
+            "customerId": "ct_1",
+            "restaurantId": "res_3",
+            "order": ["mitem_1", "mitem_2"]
+        },
+        {
+            "id": "order_3",
+            "customerId": "ct_3",
+            "restaurantId": "res_2",
+            "order": ["mitem_3"]
+        },
+        {
+            "id": "order_4",
+            "customerId": "ct_4",
+            "restaurantId": "res_2",
+            "order": ["mitem_1"]
+        },
+        {
+            "id": "order_5",
+            "customerId": "ct_2",
+            "restaurantId": "res_3",
+            "order": ["mitem_3"]
+        },
+        {
+            "id": "order_6",
+            "customerId": "ct_5",
+            "restaurantId": "res_2",
+            "order": ["mitem_2"]
+        }
+    ]
+}
