@@ -1,0 +1,7 @@
+{
+    "env": {
+        "mongoDatabase": "fds",
+        "mongoUserName": "<YOUR USERNAME>",
+        "mongoUserPassword": "<YOUR PASSWORD>"
+    }
+}
