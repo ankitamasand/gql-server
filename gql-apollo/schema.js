@@ -2,13 +2,13 @@ const { gql } = require('apollo-server-express')
 
 const typeDefs = gql`
     type Menu {
-        id: Int,
+        _id: String,
         name: String,
         price: Float
     }
 
     type Restaurant {
-        id: Int,
+        _id: String,
         name: String,
         email: String,
         location: String,
@@ -16,26 +16,37 @@ const typeDefs = gql`
     }
 
     type Customer {
-        id: Int,
+        _id: String,
         name: String,
         email: String,
         location: String
     }
 
     type Order {
-        id: Int
-        customerId: Int
-        restaurantId: Int
+        _id: String,
+        customerId: String,
+        restaurantId: String,
         order: [String]
     }
 
     type Query {
         restaurants: [Restaurant],
-        restaurant (id: Int): Restaurant,
+        restaurant (id: String): Restaurant,
         customers: [Customer],
-        customer (id: Int): Customer,
+        customer (id: String): Customer,
         orders: [Order],
-        order (id: Int): Order
+        order (id: String): Order
+    }
+
+    input MenuItem {
+        name: String,
+        price: Float
+    }
+
+    type Mutation {
+        addRestaurant (name: String, email: String, location: String, menu: [MenuItem]): Restaurant,
+        addCustomer (name: String, email: String, location: String): Customer,
+        addOrder (customerId: String, restaurantId: String, order: [String]): Order
     }
 `
 
