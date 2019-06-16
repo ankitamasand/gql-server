@@ -5,7 +5,7 @@ const resolvers = {
         restaurants (parent, args, context, info) {
             return Restaurant.find()
                 .then (restaurant => {
-                    return restaurant.map (r => ({ ...restaurant._doc }))
+                    return restaurant.map (r => ({ ...r._doc }))
                 })
                 .catch (err => {
                     console.error(err)
