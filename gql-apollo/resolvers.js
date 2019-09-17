@@ -1,4 +1,5 @@
-const { Restaurant, Customer, Order } = require('./models.js')
+const { Restaurant, Customer, Order } = require('./models')
+const pubsub = require('./pubsub')
 
 const resolvers = {
     Query: {
@@ -98,11 +99,23 @@ const resolvers = {
             })
             return orderObj.save()
                 .then (result => {
-                    return { ...result._doc }
+                    const order = { ...result._doc }
+                    pubsub.publish('NEW_ORDER', { newOrder: order })
+                    return order
                 })
                 .catch (err => {
                     console.error(err)
                 })
+        }
+    },
+    Subscription: {
+        newOrder: {
+            resolve: (payload) => {
+                return payload.newOrder
+            },
+            subscribe: () => {
+                return pubsub.asyncIterator('NEW_ORDER')
+            }
         }
     }
 }

@@ -48,6 +48,10 @@ const typeDefs = gql`
         addCustomer (name: String, email: String, location: String): Customer,
         addOrder (customerId: String, restaurantId: String, order: [String]): Order
     }
+
+    type Subscription {
+        newOrder (restaurantId: String): Order
+    }
 `
 
 module.exports = typeDefs
